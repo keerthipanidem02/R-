@@ -1,0 +1,4 @@
+#scatter plot
+cat("enter vector")
+x<-scan()
+plot(x,main="main",xlab="x",ylab="y",xlim=c(0,50),ylim=c(0,50),axes=5,col="red")
