@@ -1,0 +1,5 @@
+#pie chart
+cat("enter vector")
+x<-scan()
+labels<-c("apples","grapes","orange","banana")
+pie(x,labels,main="fruits",col=rainbow(length(x)))
