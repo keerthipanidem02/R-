@@ -1,0 +1,3 @@
+x<-scan()
+m<-c("keerthi","pujitha","sulthan","sindhu","ajitha")
+barplot(x,xlab="names",ylab="marks",col="green",names.arg=m,main="student result",border="blue")
