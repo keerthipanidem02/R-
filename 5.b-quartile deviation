@@ -1,0 +1,8 @@
+#quartile deviation
+cat("enetr vector")
+x<-scan()
+l=length(x)
+q1=(l+1)/4
+q3=(3*(l+1))/4
+d=(x[q3]-x[q1])/2
+cat("quartile deviation:",d)
