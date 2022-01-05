@@ -1,0 +1,4 @@
+#frequency polygon
+cat("enter vector")
+v<-scan()
+plot(v,type="o",xlab="year",ylab="profit",main="pharma firm",xlim=c(1,10),ylim=c(0,40),col="blue")
