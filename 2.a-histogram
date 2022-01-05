@@ -1,0 +1,4 @@
+#histogram
+cat("enter vector")
+m<-scan()
+hist(m,main="price of every item",xlab="items",xlim=c(0,500),ylim=c(0,5),col="green",border="blue")
