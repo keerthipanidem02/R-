@@ -1,0 +1,29 @@
+x<-scan()
+f<-scan()
+print("enter level of significance")
+l <- scan()
+fx<-f*x
+N<-sum(f)
+sumfx<-sum(fx)
+n<-length(x)-1
+p<-sumfx/N/n
+px<-dbinom(0:n,n,p)
+px<-round(px,digit=5)
+fe<-N*px
+fe<-round(fe,digit=5)
+binomial<-data.frame(x,f,fx,px,fe)
+sums<-c(NA,N,sumfx,NA,NA)
+binomial<-rbind(binomial,sums)
+print(binomial,row.names=FALSE)
+result<-chisq.test(f,p=fe,rescale.p=TRUE)
+tv<-qchisq(l,n)
+print(result)
+print(tv)
+if(result$p.value>l)
+{
+  cat("fit in to binomial distribution")
+}
+else
+{
+  cat("not fit to bd")
+}
