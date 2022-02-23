@@ -1,0 +1,28 @@
+x<-scan()
+f<-scan()
+print("enter level of significance")
+l <- scan()
+fx<-f*x
+N<-sum(f)
+sumfx<-sum(fx)
+n<-length(x)-1
+p<-sumfx/N
+px<-dpois(0:n,lambda=p)
+px<-round(px,digit=5)
+fe<-N*px
+fe<-round(fe,digit=5)
+poisson<-data.frame(x,f,fx,px,fe)
+sums<-c(NA,N,sumfx,NA,NA)
+poisson<-rbind(poisson,sums)
+print(poisson,row.names=FALSE)
+result<-chisq.test(f,p=fe,rescale.p=TRUE)
+tv<-qchisq(l,n)
+print(result)
+print(tv)
+if(result$p.value>l)
+{
+  print("can fit in to poisson distribution")
+}else
+{
+  print("cannot fit to poisson distribution")
+}
